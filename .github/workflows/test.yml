@@ -16,7 +16,7 @@ jobs:
           check-latest: true
           cache: 'gradle'
       - name: Build with Gradle
-        run: ./gradlew build --no-daemon
+        run: ./gradlew build -x test --no-daemon
       - name: Run tests
         run: ./gradlew test --fail-fast
       # - run: java HelloWorldApp.java
