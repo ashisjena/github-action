@@ -2,6 +2,7 @@ plugins {
     kotlin("jvm") version "1.8.10"
     id("jacoco")
     java
+    id("application")
 }
 
 java {
@@ -11,6 +12,11 @@ java {
 }
 
 group = "org.example"
+
+val javaMainClass = "org.example.HelloWorldKt"
+application {
+    mainClass.set(javaMainClass)
+}
 
 repositories {
     mavenCentral()

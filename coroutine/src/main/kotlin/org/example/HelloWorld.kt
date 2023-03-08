@@ -9,13 +9,14 @@ fun main() {
         println("World!")
     }
 
-    print("Hello, ")
+    println("Hello, ")
 
     runBlocking { // or make the org.example.org.example.main suspended, so that it waits for the job.
         job.join()
-        val obj = ABC("blah")
+        val obj = Abc("blah")
+        println(obj)
     }
 }
 
 
-data class ABC(val a: String, val b: String = "Insurance")
+data class Abc(val a: String, val b: String = "Insurance")

@@ -1,7 +1,7 @@
 name: Test Project
 on: push
 jobs:
-  test:
+  build-and-test:
     runs-on: ubuntu-latest
     steps:
       - name: Get code
@@ -19,4 +19,14 @@ jobs:
         run: ./gradlew build -x test --no-daemon
       - name: Run tests
         run: ./gradlew test --fail-fast
-      # - run: java HelloWorldApp.java
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Get code
+        uses: actions/checkout@v3
+      - name: Build with Gradle
+        run: ./gradlew build -x test --no-daemon
+      - name: Deploy
+        run: echo "Deploying...."
+      - name: Run Application
+        run: ./gradlew run
