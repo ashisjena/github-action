@@ -20,12 +20,13 @@ jobs:
       - name: Run tests
         run: ./gradlew test --fail-fast
   deploy:
+    needs: build-and-test
     runs-on: ubuntu-latest
     steps:
-      - name: Get code
-        uses: actions/checkout@v3
-      - name: Build with Gradle
-        run: ./gradlew build -x test --no-daemon
+#      - name: Get code
+#        uses: actions/checkout@v3
+#      - name: Build with Gradle
+#        run: ./gradlew build -x test --no-daemon
       - name: Deploy
         run: echo "Deploying...."
       - name: Run Application
