@@ -13,5 +13,9 @@ fun main() {
 
     runBlocking { // or make the org.example.org.example.main suspended, so that it waits for the job.
         job.join()
+        val obj = ABC("blah")
     }
 }
+
+
+data class ABC(val a: String, val b: String = "Insurance")

@@ -7,7 +7,7 @@ jobs:
       - name: Print greeting
         run: |
           echo "Hello World!"
-          echo "First worklow is running"
+          echo "First workflow is running"
       - name: Print goodbye
         run: echo "Done - bye!"
     
