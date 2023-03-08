@@ -39,13 +39,13 @@ public class TDLStreamQuestionSolutionTest {
 
         List<MobileA> actualResults = getTopNMobiles(List.of(gsmarenaRatings, smartprixRatings), 5);
 
-        List<MobileA> expectedResults = new ArrayList<>(Arrays.asList(
+        List<MobileA> expectedResults = List.of(
                 new MobileA("mi note 12", 18),
                 new MobileA("iphone 15", 13),
                 new MobileA("realme 10 pro", 13),
                 new MobileA("mi note 5", 9),
                 new MobileA("samsung 10", 8)
-        ));
+        );
 
         assertEquals(expectedResults, actualResults);
     }
